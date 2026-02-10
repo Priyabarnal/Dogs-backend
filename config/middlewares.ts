@@ -6,10 +6,16 @@ module.exports = [
     config: {
       origin: [
         'http://localhost:3000',
-        'dogs-frontend-ruby.vercel.app'
+        'https://dogs-frontend-ruby.vercel.app'
       ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
-      headers: '*',
+      headers: [
+        'Content-Type',
+        'Authorization',
+        'Origin',
+        'Accept'
+      ],
+      credentials: true,
     },
   },
   'strapi::poweredBy',
